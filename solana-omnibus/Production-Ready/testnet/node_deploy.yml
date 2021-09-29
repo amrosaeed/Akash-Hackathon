@@ -85,6 +85,7 @@ services:
         --trusted-validator 9QxCLckBiJc783jnMvXZubK4wH86Eqqvashtrwvcsgkv
         --no-untrusted-rpc
         --private-rpc
+        --rpc-port 8899
         --entrypoint entrypoint.testnet.solana.com:8001
         --entrypoint entrypoint2.testnet.solana.com:8001
         --entrypoint entrypoint3.testnet.solana.com:8001
@@ -99,11 +100,11 @@ profiles:
     solana:
       resources:
         cpu:
-          units: 0.1
+          units: 16
         memory:
-          size: 512Mi
+          size: 256Gi
         storage:
-          size: 512Mi
+          size: 2048Gi #512Mi
   placement:
     akash:
       attributes:
