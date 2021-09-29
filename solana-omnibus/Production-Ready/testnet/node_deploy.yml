@@ -121,4 +121,4 @@ deployment:
   solana:
     akash:
       profile: solana
-      count: 1
+      count: 2
