@@ -3,11 +3,5 @@
 ## Implemented features
 
 <p>
-  We implemented solana.yml file, which is located in /akash/devnet directory. This file is used for deployment on akash network. In the file are configured 3 solana RPC nodes and nginx load balancer. We are not sure how to configure env for nginx (HOST and HOSTS variables), because we don't know the domain of the deployed containers.
+  We implemented node_deploy.yml file and lb_deploy file, which are located in solana-omnibus/Production-Ready/ directory. This files are used for deployment on akash network. In the node_deploy.yml is configured solana RPC node. In the lb_deploy.yml is nginx load balancer for balancing the traffic between dapp and the validator. To configure ngnix env variables, nodes need to be deployed to provider first, and check which ports are opened.
 </p>
-<p>
-  We also created docker-compose for running the local cluster. In this case we are using "build" key inside yml file to create new nginx image from Dockerfile. We configured nginx to load balance between the nodes.
-</p>
-
-## Solana-omnibus branch
-At this branch we created folder for production ready solana nodes.
