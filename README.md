@@ -6,3 +6,6 @@
 <p>
   We also created docker-compose for running the local cluster. In this case we are using "build" key inside yml file to create new nginx image from Dockerfile. We configured nginx to load balance between the nodes.
 </p>
+
+## Solana-omnibus branch
+At this branch we created folder for production ready solana nodes.
