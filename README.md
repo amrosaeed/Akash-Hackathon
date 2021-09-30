@@ -24,3 +24,5 @@ sufficient space for the ledger.
 <p>
   We implemented node_deploy.yml file and lb_deploy file, which are located in solana-omnibus/Production-Ready/ directory. This files are used for deployment on akash network. In the node_deploy.yml is configured solana RPC node. In the lb_deploy.yml is nginx load balancer for balancing the traffic between dapp and the validator. To configure ngnix env variables, nodes need to be deployed to provider first, and check which ports are opened.
 </p>
+
+![Screenshot from 2021-09-30 05-37-04](https://user-images.githubusercontent.com/82784007/135428104-01eebb1d-04b2-4f09-8efe-b7aa9c9167a6.png)
