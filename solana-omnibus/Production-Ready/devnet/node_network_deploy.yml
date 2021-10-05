@@ -105,7 +105,7 @@ profiles:
         memory:
           size: 256Gi
         storage:
-          size: 2048Gi #512Mi
+          size: 200Gi #512Mi
   placement:
     akash:
       attributes:
