@@ -3,10 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/nginx-dynamic-lb:v0.0.2
+    image: ghcr.io/tombeynon/nginx-dynamic-lb:v0.0.2 # our image, first need to push image to docker hub
     env:
-      - HOST=mylbdomain.com
-      - HOSTS=<node_deploy_1:port,node_deploy_2:port...>
+      - HOST=mylbdomain.com # HOST-DOMAIN
+      - HOSTS=<node_deploy_1:port,node_deploy_2:port...> # NODE_1:PORT_1,NODE_2:PORT_2...
     expose:
       - port: 80
         to:
@@ -38,4 +38,4 @@ deployment:
   node:
     dcloud:
       profile: node
-      count: 2
+      count: 2 #COUNT_OF_NODES

@@ -1,0 +1,125 @@
+---
+version: "2.0"
+
+services:
+  solana:
+    image: solanalabs/solana:v1.6.10 # solanalabs/solana:VERSION
+    expose:
+      - port: 8899
+        as: 8899
+        proto: tcp
+        to:
+          - global: true
+      - port: 8001
+        as: 8001
+        proto: tcp
+        to:
+          - global: true
+      - port: 8900
+        as: 8900
+        proto: tcp
+        to:
+          - global: true
+      - port: 8010
+        as: 8010
+        proto: udp
+        to:
+          - global: true
+      - port: 8011
+        as: 8011
+        proto: udp
+        to:
+          - global: true
+      - port: 8012
+        as: 8012
+        proto: udp
+        to:
+          - global: true
+      - port: 8013
+        as: 8013
+        proto: udp
+        to:
+          - global: true
+      - port: 8014
+        as: 8014
+        proto: udp
+        to:
+          - global: true
+      - port: 8015
+        as: 8015
+        proto: udp
+        to:
+          - global: true
+      - port: 8016
+        as: 8016
+        proto: udp
+        to:
+          - global: true
+      - port: 8017
+        as: 8017
+        proto: udp
+        to:
+          - global: true
+      - port: 8018
+        as: 8018
+        proto: udp
+        to:
+          - global: true
+      - port: 8019
+        as: 8019
+        proto: udp
+        to:
+          - global: true
+      - port: 8020
+        as: 8020
+        proto: udp
+        to:
+          - global: true
+    env:
+      - SOLANA_RUN_SH_CLUSTER_TYPE=devnet
+      - |
+        SOLANA_RUN_SH_VALIDATOR_ARGS=
+        --trusted-validator dv1ZAGvdsz5hHLwWXsVnM94hWf1pjbKVau1QVkaMJ92
+        --trusted-validator dv2eQHeP4RFrJZ6UeiZWoc3XTtmtZCUKxxCApCDcRNV
+        --trusted-validator dv4ACNkpYPcE3aKmYDqZm9G5EB3J4MRoeE7WNDRBVJB
+        --trusted-validator dv3qDFk1DTF36Z62bNvrCXe9sKATA6xvVy6A798xxAS
+        --no-untrusted-rpc
+        --private-rpc
+        --rpc-port 8899
+        --entrypoint entrypoint.devnet.solana.com:8001
+        --entrypoint entrypoint2.devnet.solana.com:8001
+        --entrypoint entrypoint3.devnet.solana.com:8001
+        --entrypoint entrypoint4.devnet.solana.com:8001
+        --entrypoint entrypoint5.devnet.solana.com:8001
+        --expected-genesis-hash EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG
+        --wal-recovery-mode skip_any_corrupted_record
+        --limit-ledger-size
+        --dynamic-port-range 8010-8020
+
+profiles:
+  compute:
+    solana:
+      resources:
+        cpu:
+          units: 16
+        memory:
+          size: 256Gi
+        storage:
+          size: 2048Gi #512Mi
+  placement:
+    akash:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+      pricing:
+        solana: 
+          denom: uakt
+          amount: 10
+
+deployment:
+  solana:
+    akash:
+      profile: solana
+      count: 2
