@@ -28,4 +28,9 @@ services:
       - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
+  nginx:
+    build: ./nginx/
+    ports:
+      - '8080:80'
+
     
