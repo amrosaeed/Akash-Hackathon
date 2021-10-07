@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: solanalabs/solana:v1.6.10
+    ports:
+      - '8899:8899'
+    environment:
+      - MONIKER=node_1
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+  node_2:
+    image: solanalabs/solana:v1.6.10
+    ports:
+      - '8898:8899'
+    environment:
+      - MONIKER=node_1
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+  node_3:
+    image: solanalabs/solana:v1.6.10
+    ports:
+      - '8897:8899'
+    environment:
+      - MONIKER=node_1
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+    
