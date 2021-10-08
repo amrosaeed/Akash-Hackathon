@@ -30,8 +30,8 @@ sufficient space for the ledger.
 
 ## User guide
 1. Deploy validators that are faced to the dapp
-2. Create nginx image
-3. Push nginx image to DockerHub
-4. Configure load balancer with the domains and ports of the deployed validator nodes
+2. Configure load balancer with the domains and ports of the deployed validator nodes
+3. Create nginx image
+4. Push nginx image to DockerHub
 5. Deploy load balancer on the akash
 
