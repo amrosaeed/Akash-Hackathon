@@ -28,3 +28,10 @@ sufficient space for the ledger.
   We implemented node_deploy.yml file and lb_deploy file, which are located in solana-omnibus/Production-Ready/ directory. This files are used for deployment on akash network. In the node_deploy.yml is configured solana RPC node https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet. In the lb_deploy.yml is nginx load balancer for balancing the traffic between dapp and the validator. To configure ngnix env variables, nodes need to be deployed to provider first, and check which ports are opened.
 </p>
 
+## User guide
+1. Deploy validators that are faced to the dapp
+2. Create nginx image
+3. Push nginx image to DockerHub
+4. Configure load balancer with the domains and ports of the deployed validator nodes
+5. Deploy load balancer on the akash
+
